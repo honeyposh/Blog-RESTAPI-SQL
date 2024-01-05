@@ -14,6 +14,7 @@ exports.createPost = async (req, res, next) => {
       imageUrl: imageUrl,
       postedBy: req.user.id,
     });
+    await post.save();
     res.status(201).json({
       success: true,
       post,
